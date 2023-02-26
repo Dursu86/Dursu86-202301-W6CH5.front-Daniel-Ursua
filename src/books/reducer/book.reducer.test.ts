@@ -1,3 +1,4 @@
+import { BookStructure } from "../models/book";
 import * as ac from "./book.actions.creator";
 import { bookReducer, State } from "./book.reducer";
 
@@ -39,8 +40,11 @@ describe("Given the bookReducer", () => {
 
   describe("When action is loadOne", () => {
     test("Then it should return the new state", () => {
-      const operation = bookReducer(mockState, mockLoad);
-      const result = { books: 1 };
+      const mockLoadState = {
+        books: [{ id: 1, author: "test" }],
+      } as unknown as State;
+      const operation = bookReducer(mockLoadState, mockLoadOne);
+      const result = { books: [{ id: 1, author: "test" }] };
 
       expect(operation).toEqual(result);
     });
