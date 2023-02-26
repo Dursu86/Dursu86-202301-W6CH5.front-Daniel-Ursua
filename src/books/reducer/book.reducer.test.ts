@@ -1,4 +1,3 @@
-import { BookStructure } from "../models/book";
 import * as ac from "./book.actions.creator";
 import { bookReducer, State } from "./book.reducer";
 
