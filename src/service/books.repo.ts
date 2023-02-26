@@ -1,4 +1,4 @@
-import { BookStructure } from "../models/book";
+import { BookStructure } from "../books/models/book";
 
 export interface BooksRepoStructure {
   readAll(): Promise<BookStructure[]>;

@@ -1,4 +1,4 @@
-import { BookStructure } from "../models/book";
+import { BookStructure } from "../books/models/book";
 import { BooksRepo } from "./books.repo";
 
 const repo = new BooksRepo();
@@ -27,7 +27,10 @@ describe("Given the books repo", () => {
         ok: true,
         json: jest
           .fn()
-          .mockResolvedValue({ id: 2, test: "test2" } as unknown as Scrub),
+          .mockResolvedValue({
+            id: 2,
+            test: "test2",
+          } as unknown as BookStructure),
       });
 
       const readOne = await repo.readOne(2);

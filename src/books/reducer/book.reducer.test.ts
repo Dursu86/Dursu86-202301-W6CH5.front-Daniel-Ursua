@@ -6,6 +6,12 @@ describe("Given the bookReducer", () => {
     type: ac.loadCreator,
     payload: 1,
   };
+
+  const mockLoadOne = {
+    type: ac.loadOneCreator,
+    payload: 1,
+  };
+
   const mockAdd = {
     type: ac.addCreator,
     payload: 2,
@@ -27,6 +33,15 @@ describe("Given the bookReducer", () => {
     test("Then it should return the new state", () => {
       const operation = bookReducer(mockState, mockLoad);
       const result = { books: 1 };
+      expect(operation).toEqual(result);
+    });
+  });
+
+  describe("When action is loadOne", () => {
+    test("Then it should return the new state", () => {
+      const operation = bookReducer(mockState, mockLoad);
+      const result = { books: 1 };
+
       expect(operation).toEqual(result);
     });
   });
