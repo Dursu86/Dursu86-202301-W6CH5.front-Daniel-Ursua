@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import { App } from "./app";
 
 describe("Given the App component", () => {
   describe("When it is render", () => {
